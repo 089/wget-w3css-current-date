@@ -11,14 +11,15 @@
 ULR=http://www.w3schools.com/lib/w3.css
 TODAY=`date +%Y-%m-%d`
 FILENAME="${TODAY}_w3.css"
+LATEST="latest-w3.css"
 
 # download
 wget http://www.w3schools.com/lib/w3.css -O ${FILENAME}
 
 # symbolic link
-if [ -f ${FILENAME} ]
+if [ -f ${LATEST} ]
 then
-  rm ${FILENAME}
+  rm ${LATEST}
 fi
 
-ln -s ${FILENAME} latest-w3.css
+ln -s ${FILENAME} ${LATEST}
